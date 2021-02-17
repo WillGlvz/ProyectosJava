@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="625" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="65dcb749-25bc-44a3-b344-a433dd992a8a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="267"/>
+	<parameter name="Nombres" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Apellidos" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Usuario" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Codigo" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select codigo_retiro, placa, tipo_vehiculo, fecha_inicio, tarifa, fecha_salida, hora_salida, horas_transcurridas, monto_total from retirar_vehiculo where placa=$P{Codigo}]]>
+	</queryString>
+	<field name="codigo_retiro" class="java.lang.Integer"/>
+	<field name="placa" class="java.lang.String"/>
+	<field name="tipo_vehiculo" class="java.lang.String"/>
+	<field name="fecha_inicio" class="java.sql.Timestamp"/>
+	<field name="tarifa" class="java.math.BigDecimal"/>
+	<field name="fecha_salida" class="java.sql.Timestamp"/>
+	<field name="hora_salida" class="java.lang.String"/>
+	<field name="horas_transcurridas" class="java.lang.Integer"/>
+	<field name="monto_total" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="135" splitType="Stretch">
+			<staticText>
+				<reportElement x="195" y="73" width="360" height="20" uuid="591581b1-06b4-4a38-8fdc-639a99db6841"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[San salvador, cima uno]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="195" height="135" uuid="231ed1e6-90a6-4cbe-9ea3-86ff4ebb7df8"/>
+				<imageExpression><![CDATA["E:\\LGP\\Periodo I\\Recursos\\imagenes\\EasyParkingSystem\\ImagenesReportes\\LogoReporte.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="195" y="36" width="360" height="20" uuid="3c2dec7c-4407-449c-b267-adb2b8d359dd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[0614-290209-000-0]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="195" y="0" width="360" height="20" uuid="b220150b-cd0a-44bc-a397-d24ef8e2805d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Parqueo Easy Parking]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="195" y="115" width="360" height="20" uuid="71cf7a00-0434-40d5-87d9-7cd664a29002"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[7820-8631]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="41" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="41" uuid="cce6149d-0d49-4d3d-a58e-4bfeea424e6e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Datos del cliente]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="214" splitType="Stretch">
+			<staticText>
+				<reportElement x="65" y="18" width="116" height="20" uuid="ba2dde63-71d1-4387-89c0-152cda92374a"/>
+				<text><![CDATA[Codigo retiro:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="181" y="18" width="134" height="20" uuid="d261a5a3-1225-46cc-b7fc-a0035c8b41c6"/>
+				<textFieldExpression><![CDATA[$F{codigo_retiro}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="65" y="38" width="116" height="20" uuid="39c03292-9194-4037-b129-ecc9dec24565"/>
+				<text><![CDATA[N° matricula:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="181" y="38" width="134" height="20" uuid="626d4792-b140-485d-a456-5567479f8953"/>
+				<textFieldExpression><![CDATA[$F{placa}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="65" y="58" width="116" height="20" uuid="537bd57b-985d-4699-ba5d-5976263e9a0c"/>
+				<text><![CDATA[Tipo vehiculo:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="181" y="58" width="134" height="20" uuid="905658cc-5a6c-41c9-8ba8-ecf67f3a0324"/>
+				<textFieldExpression><![CDATA[$F{tipo_vehiculo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="65" y="78" width="116" height="20" uuid="e20c193c-2243-4910-bcb1-8eaab57ec4c4"/>
+				<text><![CDATA[Fecha ingreso:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="181" y="78" width="48" height="20" uuid="f6f872b5-4cff-4882-9be9-03a451fd3741"/>
+				<textFieldExpression><![CDATA[$F{fecha_inicio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="65" y="98" width="116" height="20" uuid="8f05f836-2de5-4c40-846d-cc876e15ea9a"/>
+				<text><![CDATA[Tarifa:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="181" y="98" width="26" height="20" uuid="88230321-ab1b-4de2-9a07-bbcbc3e79378"/>
+				<textFieldExpression><![CDATA[$F{tarifa}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="65" y="118" width="116" height="20" uuid="e3c5dd35-9f9d-4d2c-9580-5be747039eec"/>
+				<text><![CDATA[Fecha salida:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="181" y="118" width="48" height="20" uuid="d3310606-a022-431f-ab23-1e45584b392a"/>
+				<textFieldExpression><![CDATA[$F{fecha_salida}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="65" y="138" width="116" height="20" uuid="94fd49e6-075b-4a24-b08b-f48446b0c5f0"/>
+				<text><![CDATA[Hora salida:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="181" y="138" width="134" height="20" uuid="944b753d-e8b3-4a75-861e-6d106e63a484"/>
+				<textFieldExpression><![CDATA[$F{hora_salida}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="65" y="158" width="116" height="20" uuid="7bdf37cc-2348-4859-87d5-6a5819102a86"/>
+				<text><![CDATA[Min. transcurridos:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="181" y="158" width="134" height="20" uuid="e88146ba-6b0a-4326-b145-cbfd82df103f"/>
+				<textFieldExpression><![CDATA[$F{horas_transcurridas}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="65" y="178" width="116" height="20" uuid="b9258121-4a32-41e9-8b10-962ae3b9f852"/>
+				<text><![CDATA[Monto total:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="181" y="178" width="24" height="20" uuid="cbeabecb-5893-488a-85fc-ad17d2a7ba21"/>
+				<textFieldExpression><![CDATA[$F{monto_total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="0" width="100" height="20" uuid="c4654c77-719a-405b-8205-9f3caea832f6"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="242" y="0" width="100" height="20" uuid="3e0bce07-1101-4705-9e86-17d69b47ba23"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="h.mm.ss a">
+				<reportElement x="455" y="0" width="100" height="20" uuid="e3c3d2fe-0813-435b-97b3-45557d3d1e44"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="111" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="72" width="100" height="20" uuid="58459a4b-9b06-41b8-a6a0-7ca0822ffd3a"/>
+				<box>
+					<pen lineWidth="0.0" lineStyle="Double"/>
+					<topPen lineWidth="0.0" lineStyle="Double"/>
+					<leftPen lineWidth="0.0" lineStyle="Double"/>
+					<bottomPen lineWidth="0.0" lineStyle="Double"/>
+					<rightPen lineWidth="0.0" lineStyle="Double"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fuiste atendido por:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="264" y="72" width="100" height="20" uuid="42a4d005-562e-4ba5-afb9-1f82f8d5bc2f"/>
+				<box>
+					<pen lineWidth="0.0" lineStyle="Double"/>
+					<topPen lineWidth="0.0" lineStyle="Double"/>
+					<leftPen lineWidth="0.0" lineStyle="Double"/>
+					<bottomPen lineWidth="0.0" lineStyle="Double"/>
+					<rightPen lineWidth="0.0" lineStyle="Double"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{Apellidos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="142" y="72" width="100" height="20" uuid="87f6b114-b247-4b70-b8ce-f3ba74878065"/>
+				<box>
+					<pen lineWidth="0.0" lineStyle="Double"/>
+					<topPen lineWidth="0.0" lineStyle="Double"/>
+					<leftPen lineWidth="0.0" lineStyle="Double"/>
+					<bottomPen lineWidth="0.0" lineStyle="Double"/>
+					<rightPen lineWidth="0.0" lineStyle="Double"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{Nombres}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
